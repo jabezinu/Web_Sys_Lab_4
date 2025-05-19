@@ -1,166 +1,126 @@
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: black;
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100%;
     font-family: Arial, sans-serif;
+    background-color: #000;
 }
 
-/* floor of the navigation bar*/
+/* Navigation */
 nav {
-    width: 100%;
-    height: 72px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #1e1e1e;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    height: 72px;
     padding: 0 20px;
     box-sizing: border-box;
+    background-color: #1e1e1e;
 }
 
-/* the text "My Logo" on the navbar */
 .logo {
-    color: white;
-    font-weight: bold;
+    color: #fff;
     font-size: 18px;
+    font-weight: bold;
 }
 
-/* Container for navigation links that arranges items in a row and centers them vertically */
 .nav-links {
     display: flex;
     align-items: center;
 }
 
+.nav-links a, 
+.email-icon,
+.social-icons a,
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
 .nav-links a {
-    color: white;              /* Sets text color to white for visibility against dark background */
-    text-decoration: none;     /* Removes underlines from links for a cleaner appearance */
-    margin-left: 20px;         /* Adds spacing between navigation links for better readability */
-    font-size: 16px;           /* Sets appropriate font size for navigation text */
-    transition: color 0.3s ease; /* Adds smooth color transition effect when hovering over links */
+    margin-left: 20px;
+    font-size: 16px;
 }
 
-.nav-links a:hover {  /* Changes icon color on hover to provide visual feedback to users */
+.nav-links a:hover,
+.social-icons a:hover,
+.footer-social a:hover {
     color: #ff6600;
 }
 
-/* Email icon styling - sets the color to white to match the navigation theme */
-.email-icon {
-    color: white;
-}
-
-/* Social media icons sidebar */
+/* Social Icons */
 .social-icons {
-    position: fixed;           /* Fixes the social icons container to the viewport */
-    left: 30px;                /* Positions the container 30px from the left edge of the viewport */
-    top: 50%;                  /* Places the container at the vertical middle of the viewport */
-    transform: translateY(-50%); /* Centers the container vertically by shifting it up by half its height */
-    display: flex;             /* Uses flexbox layout for the container */
-    flex-direction: column;    /* Arranges the social icons vertically in a column */
-    gap: 20px;                 /* Adds 20px spacing between each social icon */
-    z-index: 100;              /* Ensures the icons appear above most other elements on the page */
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(-50%);
 }
 
-.social-icons a {
-    color: white;              /* Sets the social icons to white to match the site's color scheme */
-    font-size: 20px;           /* Defines the size of the social icons for good visibility */
-    transition: color 0.3s ease; /* Adds a smooth transition effect when the icon color changes on hover */
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
-.social-icons a:hover {  /* Changes icon color on hover to provide visual feedback to users */
-    color: #ff6600;
-}
-
-/* Responsive adjustments (for mobile phone */
-@media (max-width: 768px) {
-    nav {
-        padding: 0 15px;       /* Reduces horizontal padding on smaller screens to maximize content space */
-    }
-    
-    .nav-links a {
-        margin-left: 15px;     /* Decreases spacing between navigation links on mobile for better fit */
-        font-size: 14px;       /* Reduces font size on smaller screens to prevent text overflow */
-    }
-    
-    .social-icons {
-        left: 15px;            /* Moves social icons closer to the edge on mobile to save space */
-        gap: 15px;             /* Reduces spacing between social icons on smaller screens */
-    }
-
-    .hero-content {
-        padding-left: 20px;    /* Reduces left padding on mobile to better fit smaller screens */
-        width: 90%;            /* Increases width percentage on mobile for better content visibility */
-    }
-
-    .title-main, .title-name {
-        font-size: 2.5rem;     /* Reduces title font size on mobile devices for better readability and fit */
-    }
-
-    .title-role {
-        font-size: 1.5rem;     /* Reduces role title font size on mobile for better proportions with other text elements */
-    }
-
-    .description {
-        font-size: 1rem;       /* Reduces description text size on mobile for better readability and to maintain proper text hierarchy */
-    }
-}
-
-/* Main content styling */
 .hero-content {
-    position: absolute;        /* Positions the content absolutely within its container */
-    top: 50%;                  /* Places the element at 50% from the top of the container */
-    left: 50%;                 /* Places the element at 50% from the left of the container */
-    transform: translate(-50%, -50%); /* Centers the element perfectly by offsetting by half its width and height */
-    width: 80%;                /* Sets the content width to 80% of its container for responsive design */
-    max-width: 800px;          /* Limits maximum width to 800px to maintain readability on large screens */
-    padding-left: 60px;        /* Adds left padding to create space for the social icons sidebar */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    max-width: 800px;
+    padding-left: 60px;
+    transform: translate(-50%, -50%);
 }
 
-.title-main {
-    color: #ff6600;            /* Primary orange color for visual emphasis and brand consistency */
-    font-size: 3.5rem;         /* Large font size for main heading to create visual hierarchy */
-    margin: 0;                 /* Removes default margins to allow for custom spacing */
-    font-weight: bold;         /* Makes text bold for better visibility and emphasis */
+.title-main,
+.title-name {
+    color: #ff6600;
+    font-size: 3.5rem;
+    margin: 0;
+    font-weight: bold;
 }
 
 .title-name {
-    color: #ff6600;            /* Primary orange color matching the main title for visual consistency */
-    font-size: 3.5rem;         /* Large font size matching the main title for visual hierarchy */
-    margin: 0 0 20px 0;        /* Removes top/side margins, adds bottom margin to create spacing before next element (anticlockwise)*/
-    font-weight: bold;         /* Bold text for emphasis and improved readability */
+    margin-bottom: 20px;
 }
 
 .title-role {
-    color: white;              /* White text color for contrast against the dark background */
-    font-size: 1.8rem;         /* Medium font size to create hierarchy between name and description */
-    margin: 0 0 20px 0;        /* No margins on top/sides, 20px bottom margin to create space before description */
-    font-weight: normal;       /* Normal weight to differentiate from the bold name/title above */
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0 0 20px;
+    font-weight: normal;
 }
 
 .description {
-    color: white;              /* White text color for contrast against the dark background */
-    font-size: 1.1rem;         /* Slightly larger than standard text for better readability while maintaining hierarchy */
-    line-height: 1.6;          /* Increased line spacing for improved readability of paragraph text */
-    max-width: 600px;          /* Limits width to maintain optimal reading length and text block appearance */
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
 }
 
-.hero-section {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-}
-
+/* Works Section */
 .white-section {
-    background-color: white;
     width: 100%;
     padding: 70px 0;
+    background-color: #fff;
 }
 
-/* Works Section Styles */
 .works-container {
     width: 90%;
     max-width: 1200px;
@@ -180,11 +140,10 @@ nav {
 
 .works-header hr {
     width: 40%;
-    border: 1px solid #ddd;
     margin: 0 auto;
+    border: 1px solid #ddd;
 }
 
-/* Featured Work */
 .featured-work {
     display: flex;
     gap: 30px;
@@ -213,8 +172,7 @@ nav {
 .featured-content h3 {
     color: #333;
     font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .featured-content p {
@@ -223,7 +181,6 @@ nav {
     margin-bottom: 20px;
 }
 
-/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -254,11 +211,11 @@ nav {
 }
 
 .project-content {
-    padding: 20px;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(5px);
 }
@@ -266,8 +223,7 @@ nav {
 .project-content h3 {
     color: #333;
     font-size: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 }
 
 .project-content p {
@@ -277,7 +233,6 @@ nav {
     margin-bottom: 15px;
 }
 
-/* Tags */
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -293,75 +248,33 @@ nav {
     font-size: 0.8rem;
 }
 
-/* Project Button */
-.project-button {
+.project-button,
+.resume-button,
+.contact-button {
     background-color: #ff6600;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.project-button:hover {
+.project-button {
+    padding: 10px 20px;
+}
+
+.project-button:hover,
+.resume-button:hover,
+.contact-button:hover {
     background-color: #e55c00;
 }
 
-/* Responsive adjustments for works section */
-@media (max-width: 992px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .featured-work {
-        flex-direction: column;
-    }
-    
-    .featured-image, .featured-content {
-        flex: auto;
-    }
-    
-    .works-header h2 {
-        font-size: 2rem;
-    }
-    
-    .featured-content h3 {
-        font-size: 1.5rem;
-    }
-    
-    .works-header hr {
-        width: 60%;
-    }
-}
-
-@media (max-width: 576px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .works-container {
-        width: 95%;
-    }
-    
-    .featured-content {
-        padding: 20px;
-    }
-    
-    .works-header h2 {
-        font-size: 1.8rem;
-    }
-}
-
-/* About Me Section */
+/* About Section */
 .about-section {
-    background-color: #1e1e1e;
-    color: white;
     padding: 80px 0;
-    position: relative;
+    background-color: #1e1e1e;
+    color: #fff;
 }
 
 .about-container {
@@ -399,19 +312,8 @@ nav {
 }
 
 .resume-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.resume-button:hover {
-    background-color: #e55c00;
 }
 
 .skills-container {
@@ -434,24 +336,21 @@ nav {
     color: #ff6600;
 }
 
-.diamond, .square, .circle {
+.diamond,
+.square,
+.circle {
     display: inline-block;
     width: 15px;
     height: 15px;
     margin-right: 10px;
+    background-color: #ff6600;
 }
 
 .diamond {
-    background-color: #ff6600;
     transform: rotate(45deg);
 }
 
-.square {
-    background-color: #ff6600;
-}
-
 .circle {
-    background-color: #ff6600;
     border-radius: 50%;
 }
 
@@ -466,10 +365,10 @@ nav {
     font-size: 1.1rem;
 }
 
-/* Contact Form Section */
+/* Contact Section */
 .contact-section {
-    background-color: white;
     padding: 80px 0;
+    background-color: #fff;
     text-align: center;
 }
 
@@ -506,7 +405,7 @@ nav {
     flex-basis: 100%;
 }
 
-.contact-form input, 
+.contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 15px;
@@ -521,21 +420,10 @@ nav {
 }
 
 .contact-button {
-    background-color: #ff6600;
-    color: white;
-    border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
     margin: 0 auto;
     display: block;
-}
-
-.contact-button:hover {
-    background-color: #e55c00;
 }
 
 .footer-social {
@@ -546,23 +434,74 @@ nav {
 }
 
 .footer-social a {
-    color: #333;
     font-size: 1.2rem;
-    transition: color 0.3s ease;
+    color: #333;
 }
 
-.footer-social a:hover {
-    color: #ff6600;
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Responsive styles for About and Contact sections */
 @media (max-width: 768px) {
-    .about-content {
+    nav {
+        padding: 0 15px;
+    }
+    
+    .nav-links a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    
+    .social-icons {
+        left: 15px;
+        gap: 15px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        width: 90%;
+    }
+
+    .title-main,
+    .title-name {
+        font-size: 2.5rem;
+    }
+
+    .title-role {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+    
+    .featured-work {
         flex-direction: column;
     }
     
+    .featured-image,
+    .featured-content {
+        flex: auto;
+    }
+    
+    .works-header h2,
     .about-title {
         font-size: 2rem;
+    }
+    
+    .featured-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .works-header hr {
+        width: 60%;
+    }
+    
+    .about-content {
+        flex-direction: column;
     }
     
     .category-title {
@@ -575,9 +514,22 @@ nav {
 }
 
 @media (max-width: 576px) {
-    .about-container, 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .works-container,
+    .about-container,
     .contact-container {
         width: 95%;
+    }
+    
+    .featured-content {
+        padding: 20px;
+    }
+    
+    .works-header h2 {
+        font-size: 1.8rem;
     }
     
     .contact-form {
@@ -588,7 +540,3 @@ nav {
         flex-basis: 100%;
     }
 }
-
-html {
-    scroll-behavior: smooth;
-} 
