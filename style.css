@@ -468,55 +468,58 @@ nav {
 
 /* Contact Form Section */
 .contact-section {
-    background-color: white;
+    background-color: #1e1e1e;
     padding: 80px 0;
-    text-align: center;
+    color: white;
 }
 
 .contact-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .contact-text {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .contact-text h2 {
-    color: #333;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
     line-height: 1.4;
-    font-weight: normal;
 }
 
-.contact-form {
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
-    margin-bottom: 40px;
 }
 
-.form-group {
-    flex: 1;
-    min-width: 200px;
-}
-
-.full-width {
-    flex-basis: 100%;
-}
-
-.contact-form input, 
-.contact-form textarea {
+.contact-section input,
+.contact-section textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     border-radius: 4px;
-    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
-.contact-form textarea {
-    height: 150px;
+.contact-section input:focus,
+.contact-section textarea:focus {
+    outline: none;
+    border-color: #ff6600;
+}
+
+.contact-section textarea {
+    min-height: 150px;
     resize: vertical;
 }
 
@@ -525,29 +528,27 @@ nav {
     color: white;
     border: none;
     padding: 15px 30px;
-    font-size: 1.1rem;
+    font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
     transition: background-color 0.3s ease;
-    margin: 0 auto;
-    display: block;
+    align-self: flex-start;
 }
 
 .contact-button:hover {
-    background-color: #e55c00;
+    background-color: #ff8533;
 }
 
 .footer-social {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 50px;
+    gap: 20px;
 }
 
 .footer-social a {
-    color: #333;
-    font-size: 1.2rem;
+    color: white;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
@@ -555,37 +556,17 @@ nav {
     color: #ff6600;
 }
 
-/* Responsive styles for About and Contact sections */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-title {
+    .contact-text h2 {
         font-size: 2rem;
     }
     
-    .category-title {
-        font-size: 1.3rem;
+    .contact-section form {
+        padding: 0 20px;
     }
     
-    .contact-text h2 {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .about-container, 
-    .contact-container {
-        width: 95%;
-    }
-    
-    .contact-form {
-        gap: 15px;
-    }
-    
-    .form-group {
-        flex-basis: 100%;
+    .contact-button {
+        width: 100%;
     }
 }
 
